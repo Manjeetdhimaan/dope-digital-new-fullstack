@@ -1,0 +1,109 @@
+<!-- <app-header></app-header> -->
+<!-- blog details part start -->
+<div class="center">
+  <app-loading *ngIf="isLoading"></app-loading>
+</div>
+<section *ngIf="!isLoading && !isError" class="blog-details section" style="margin-top:2rem">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 wow" animation="fadeInLeft" delay="100" duration="800" offset="1500" triggerOnce="true">
+        <article class="post " >
+          <div class="post-image">
+            <h3 class="bold-text">{{ blog?.title }}.</h3>
+            <img class="img-fluid w-100" [src]="blog?.imgSrc" [alt]="blog?.title">
+          </div>
+          <!-- Post Content -->
+          <div class="post-content">
+            
+            <div *ngFor="let fact of blog?.otherFacts">
+                <p [innerHTML]="fact.fact"></p>
+            </div>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post-content">
+            <h2 class="boldH2">{{ blog?.subTitles[0] }}</h2>
+           
+            <div *ngFor="let fact of blog?.subTitleFacts">
+                <p [innerHTML]="fact.fact"></p>
+            </div>
+            <h2 class="boldH2" *ngIf="blog?.subTitleFactHeader">{{ blog?.subTitleFactHeader }}</h2>
+
+            <div *ngFor="let fact of blog?.subTitleFactTitles">
+              <p [innerHTML]="fact.point"></p>
+          </div>
+
+            <div style="margin-left:4%;" *ngFor="let points of blog?.subTitleFactPoints; let i= index;">
+             
+               <ol type="1" id="containerIntro" class="list-inline"  >
+                
+                <h3 [innerHTML]="points.title"></h3> 
+              
+              <a *ngIf="points.imgSrc && points.floatImage=='right'" class="boxout2 progressive replace" style="max-height: 250px; width: 250px;">
+                <img style="height: 100%; width: 100%;" [src]="points.imgSrc" class="preview" loading="lazy" width="20" height="15" alt="jump" />
+              </a>
+              <a *ngIf="points.imgSrc && points.floatImage=='left'" class="boxout3 progressive replace" style="max-height: 250px; width: 250px;">
+                <img style="height: 100%; width: 100%;" [src]="points.imgSrc" class="preview" loading="lazy" width="20" height="15" alt="jump" />
+              </a>
+              <p [innerHTML]="points.point"></p>
+            </ol>
+             <br>
+              
+          </div>
+          <br>
+          <br>
+            <!-- blockquote -->
+            <h3 *ngIf="blog?.finalNotesHeader" [innerHTML]="blog?.finalNotesHeader"></h3>
+            <article class="post" style="margin-top:6%">
+              <!-- <h4>Final Notes</h4> -->
+              <div *ngFor="let note of blog?.finalNotes">
+                <p data-aos="fade-left" data-aos-duration="1000" [innerHTML]="note.finalNote"></p>
+              </div>
+            </article>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        <!-- sidebar -->
+        <aside class="sidebar">
+          <div class="widget-post widget" animation="fadeInRight" delay="100" duration="800" offset="1500" triggerOnce="true">
+            <h2>Latest Posts</h2>
+            <!-- latest post -->
+            <ul class="widget-post-list" *ngFor="let blog of latestBlogs">
+              <a (click)="onNavigate(blog)">
+              <li class="widget-post-list-item">
+                <div class="widget-post-image">
+                  <a>
+                    <img src="{{ blog?.imgSrc }}" alt="{{ blog?.title }}">
+                  </a>
+                </div>
+                <div class="widget-post-content">
+                  <a >
+                    <h5 [innerHTML]="blog?.title"></h5>
+                  </a>
+                  <h6>{{ blog?.dateOfCreatingBlog }}</h6>
+                </div>
+              </li>
+            </a>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="!isLoading && isError" id="blog" class="our-blog section bottom-margin">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 wow" animation="fadeInLeft" delay="100" duration="800" offset="1500" triggerOnce="true">
+        <div class="section-heading">
+          <h2>Error while loading blogs</h2>
+          <!-- <h2>Check Out What Is <em>Trending</em> In Our Latest <span>News</span></h2> -->
+        </div>
+      </div>
+      </div>
+      </div>
+</div>
+<!-- blog details part end -->
+<app-footer *ngIf="!isLoading"></app-footer>

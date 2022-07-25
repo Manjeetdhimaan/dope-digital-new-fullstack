@@ -1,0 +1,67 @@
+<!-- <app-header *ngIf="isContactComponent"></app-header> -->
+<div id="about" class="about-us section" animation="fadeInUp" delay="100" duration="800" offset="1500" triggerOnce="true">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="left-image wow" animation="bounceIn" delay="100" duration="800" offset="1500" triggerOnce="false" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="assets/images/about-left-image.png" alt="person graphic">
+          </div>
+        </div>
+        <div class="col-lg-8 align-self-center">
+          <div class="services">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="item wow" animation="bounceIn" delay="100" duration="800" offset="1500" triggerOnce="true">
+                  <div class="icon">
+                    <img src="assets/images/service-icon-01.png" alt="reporting">
+                  </div>
+                  <div class="right-text">
+                    <h4>Best Agency</h4>
+                    <p>Dope Digital is one of the best and quickest growing digital marketing agency located in Chandigarh.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow about-width" animation="bounceIn" delay="100" duration="800" offset="1500" triggerOnce="true">
+                  <div class="icon">
+                    <img src="assets/images/service-icon-02.png" alt="">
+                  </div>
+                  <div class="right-text">
+                    <h4>Good Experience</h4>
+                    <p>Dope Digital was founded in December 2016.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow" animation="bounceIn" delay="100" duration="800" offset="1500" triggerOnce="true">
+                  <div class="icon">
+                    <img src="assets/images/service-icon-03.png" alt="">
+                  </div>
+                  <div class="right-text">
+                    <h4>Best Services</h4>
+                    <p>We offer internet marketing, digital marketing and social media management</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow" animation="bounceIn" delay="100" duration="800" offset="1500" triggerOnce="true">
+                  <div class="icon">
+                    <img src="assets/images/service-icon-04.png" alt="">
+                  </div>
+                  <div class="right-text">
+                    <h4>Support clients</h4>
+                    <p>Dope Digital provides the best Social Media marketing and brand awareness to our clients to get more exposure.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <app-contact [isHeaderFooter]="isHeaderFooter" *ngIf="isContactComponent"></app-contact>
+  </div>
+  <app-footer *ngIf="isContactComponent"></app-footer>

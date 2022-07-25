@@ -1,0 +1,28 @@
+.main-blue-button a {
+  transition: all 0.3s ease-in-out;
+}
+
+.main-blue-button a:hover {
+  background-color: #ffa500;
+}
+
+.bottom-margin{
+    margin-bottom:14rem;
+}
+.our-blog .right-list .left-content h4:hover{
+  color:rgb(93, 87, 87);
+}
+
+.our-blog .right-list .right-image {
+  padding-top:5px 
+}
+
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  text-align: center;
+  z-index:1000
+}

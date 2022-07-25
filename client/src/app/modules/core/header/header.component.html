@@ -1,0 +1,65 @@
+<header class="header-area header-sticky wow slideInDown" [ngClass]="{'background-header' : isSticky}"
+animation="slideInDown" delay="100" duration="300" offset="100" triggerOnce="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav navbar">
+          <!-- ***** Logo Start ***** -->
+          <a class="logo" routerLink="/" (click)="onNavigate('/')">
+            <img src="assets/logo/dope-digital-2.png" alt="Offical Logo">
+            <!-- <h4>Dope<span>Digital</span></h4> -->
+          </a>
+          <!-- ***** Logo End ***** -->
+          <!-- ***** Menu Start ***** -->
+          <ul [@appearInOut]="animationState" class="nav mobile-menu" style="display:block;">
+            <li class="scroll-to-section"><a routerLink="/" class="link" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}" (click)="onNavigate('/')">Home</a></li>
+            <li><a class="link" routerLink="/about" routerLinkActive="active" (click)="onNavigate('/about')">About
+                Us</a>
+            </li>
+            <li><a class="link" routerLink="/clients" routerLinkActive="active" (click)="onNavigate('/clients')">Clients</a>
+            </li>
+            <li class="dropdown"><a class="nav-link link" routerLinkActive="active"
+                (click)="preventCloseOnClick()">Services <i id="new" class="fa fa-chevron-down"></i></a>
+              <ul class="ul">
+                <li routerLink="/services" (click)="onNavigate('/services');onToggleMobileMenu()"> <button
+                    class="dropdown-item " value="services">Our Services</button></li>
+                <li (click)="onNavigateToService('web-design');onToggleMobileMenu()">
+                  <button class="dropdown-item">Web Design</button>
+                </li>
+                <li (click)="onNavigateToService('social-media-management');onToggleMobileMenu()">
+                  <button class="dropdown-item" value="Social Media Influencer">Social Media Management</button>
+                </li>
+                <li (click)="onNavigateToService('seo');onToggleMobileMenu()"><button class="dropdown-item">Search
+                    Engine
+                    Optimization</button></li>
+                <li (click)="onNavigateToService('youtube-marketing');onToggleMobileMenu()"><button
+                    class="dropdown-item">You Tube
+                    Marketing</button></li>
+                <li (click)="onNavigateToService('paid-Ad-management');onToggleMobileMenu()"><button
+                    class="dropdown-item">Paid Ad
+                    Management</button></li>
+                <li (click)="onNavigateToService('logo-design');onToggleMobileMenu()"><button class="dropdown-item">Logo
+                    and Graphic
+                    design</button></li>
+              </ul>
+            </li>
+            <li class="scroll-to-section"><a class="link" routerLink="/blogs" routerLinkActive="active"
+                (click)="onNavigate('/blogs')">Blogs</a></li>
+            <li class="scroll-to-section mobileViewContact"><a class="link" routerLink="/contact" routerLinkActive="active"
+                (click)="onNavigate('/contact')">Contact Now</a></li>
+            <li class="scroll-to-section">
+              <div class="main-red-button"><a routerLink="/contact" (click)="onNavigate('/contact')">Contact Now</a>
+              </div>
+            </li>
+          </ul>
+          <div class='menu-trigger' [ngClass]="{'active' : isMobileMenu}"
+            (click)="onToggleMobileMenu(); preventCloseOnClick()">
+            <span>Menu</span>
+          </div>
+          <!-- ***** Menu End ***** -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

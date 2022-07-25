@@ -1,0 +1,168 @@
+#footer-menus {
+  background: #fff;
+  color: #111
+}
+
+#footer-menus h4 {
+  font-weight: 400;
+  padding-bottom: .5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(58, 58, 58, 0.1)
+}
+
+#footer-menus ul {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+#footer-menus ul li {
+  padding: .7rem 0;
+  display: flex;
+  align-items: center
+}
+
+#footer-menus ul.accred li {
+  min-height: 5rem
+}
+
+#footer-menus ul li img {
+  width: calc(90% - 15px);
+  object-fit: cover
+}
+
+#footer-menus ul.row li {
+  width: 50%
+}
+
+#footer-menus ul.row li>div,
+#footer-menus ul.row li>a {
+  width: 100%
+}
+
+ul.recent-blog a {
+  width: 100%
+}
+
+#footer-menus ul.recent-blog img {
+  height: 62px;
+  width: calc(36% - 15px);
+  margin-right: 2rem;
+  border-radius: 5px
+}
+
+#footer-menus ul.recent-blog .content {
+  width: calc(64% - 15px)
+}
+
+#footer-menus ul.recent-blog .content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+  color: #111
+}
+
+#footer-menus ul.recent-blog .content span {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #111
+}
+
+
+#footer-menus svg {
+  width: 20px;
+  fill: url(#svgGradient);
+  display: inline-block;
+  margin-right: 2rem
+}
+
+#footer-menus a {
+  display: flex;
+  align-items: center;
+  color: #111
+}
+
+#footer-menus a:hover {
+  opacity: .5
+}
+
+#copyright {
+  background: #fff;
+  padding: 0 2%;
+  font-size: 1.4rem
+}
+
+#copyright p {
+  color: #111
+}
+
+#copyright .links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+  align-items: center
+}
+
+#copyright .links li {
+  padding: 0 1rem;
+  line-height: 1
+}
+
+#copyright .links li:not(:first-child) {
+  border-left: 2px solid #717171
+}
+
+#copyright .links li a {
+  color: gray
+}
+
+#copyright .links li a:hover {
+  color: #f6f6f6
+}
+
+#copyright .social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+  align-items: center
+}
+
+@media(max-width:41.6775em) {
+  #copyright .social {
+    display: flex;
+    margin-top: 0;
+    justify-content: space-around
+  }
+}
+
+#copyright .social svg {
+  height: 1.2rem;
+  fill: #717171;
+  transition: inherit
+}
+
+#copyright .social svg:hover {
+  // fill: #ff1053;
+  fill: #ffa500
+}
+
+@media(min-width:41.6875em) {
+  #copyright .social li:not(:first-child) {
+    margin-left: 2.5rem
+  }
+}
+
+#copyright .social li a {
+  display: block
+}
+
+footer p {
+  text-align: left;
+  color: #f6f6f6;
+}
+
+.col-12 {
+  margin-bottom: 2rem;
+}
