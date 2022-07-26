@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BlogsService } from 'src/app/modules/blogs/blogs.service';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { ToasTMessageService } from 'src/app/services/toastr.service';
 
 @Component({

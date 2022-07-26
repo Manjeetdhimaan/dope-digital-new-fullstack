@@ -9,7 +9,7 @@ export class BlogsService {
   blogsArray:any;
   getBlogsArray = new Subject<any>();
   constructor(private http: HttpClient) { 
-     this.http.get(`https://backend.dopedigital.in/blogs`).subscribe((res:any) => {
+      this.http.get(`https://backend.dopedigital.in/blogs`).subscribe((res:any) => {
       //logged in user
       this.blogsArray = res;
       // getting attendance of logged in user
@@ -20,7 +20,7 @@ export class BlogsService {
   }
 
   getBlogs() {
-   return this.http.get(`https://backend.dopedigital.in/blogs`).toPromise();
+     return this.http.get(`https://backend.dopedigital.in/blogs`).toPromise();
   // return this.blogsArray1;
 
   }
