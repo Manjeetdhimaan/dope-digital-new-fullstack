@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { DirectivesModule } from "src/app/directives/directives-module";
 import { AboutUsComponent } from "./about-us/about-us.component";
+import { NewAboutComponent } from "./new-about/new-about.component";
 import { AboutRoutingModule } from "./about-routing.module";
 import { ComponentsModule } from "../components-module";
 import { CoresModule } from "../core/core-module";
@@ -10,7 +11,8 @@ import { CoresModule } from "../core/core-module";
 
 @NgModule({
     declarations: [
-        AboutUsComponent
+        AboutUsComponent,
+        NewAboutComponent
     ],
 
     imports: [
@@ -22,7 +24,8 @@ import { CoresModule } from "../core/core-module";
         CoresModule
     ],
     exports: [
-        AboutUsComponent
+        AboutUsComponent,
+        NewAboutComponent
     ],
     providers: []
 })

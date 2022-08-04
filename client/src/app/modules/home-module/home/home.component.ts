@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private dataService: DataService) { }
   isHeaderFooter = false;
   isContactComponent= false;
+  showMoreBlogs= false;
   serviceArray:any[];
   marginTop= '-40px'
 

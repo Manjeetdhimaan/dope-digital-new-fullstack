@@ -15,12 +15,14 @@ export class BlogsHeadlineComponent implements OnInit {
   latestBlogs:any[];
   isLoading:boolean=false;
   isError: boolean = false;
+  @Input() marginTop = '80px';
+  @Input() showMoreBlogs:boolean = true;
+  
   ngOnInit(): void {
 
     this.isLoading=true;
        this.blogService.getBlogs().then((blogs:any) => {
         this.latestBlogs = blogs.slice(-4).reverse();
-        this.toastService.success('Blogs loaded successfully');
         this.isLoading = false;
         this.isError = false;
       }).catch((err) => {
@@ -33,13 +35,14 @@ export class BlogsHeadlineComponent implements OnInit {
     // this.latestBlogs = this.blogService.getBlogs().slice(-4).reverse();
     // this.latestBlogs= this.blogService.blogsArray1.slice(-4).reverse();
   }
-  @Input() marginTop = '80px';
+  
 
   onNavigate(blog:any) {
     window.scrollTo({
       behavior:'smooth',
       top:0
     });
+    localStorage.setItem("blog", JSON.stringify(blog));
     const selectedBlog = blog.urlTitle.toLowerCase().split(' ').join('-');
     this.router.navigate(['/blogs/', selectedBlog]);
   }

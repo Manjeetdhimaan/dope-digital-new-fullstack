@@ -6,15 +6,16 @@
   background-color: #ffa500;
 }
 
-.bottom-margin{
-    margin-bottom:14rem;
+.bottom-margin {
+  margin-bottom: 4rem;
 }
-.our-blog .right-list .left-content h4:hover{
-  color:rgb(93, 87, 87);
+
+.our-blog .right-list .left-content h4:hover {
+  color: rgb(93, 87, 87);
 }
 
 .our-blog .right-list .right-image {
-  padding-top:5px 
+  padding-top: 5px
 }
 
 .center {
@@ -24,5 +25,5 @@
   transform: translate(-50%, -50%);
   margin: auto;
   text-align: center;
-  z-index:1000
+  z-index: 1000
 }

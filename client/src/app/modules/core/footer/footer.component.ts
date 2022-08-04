@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
     this.blogService.getBlogs().then((blogs:any) => {
-      this.latestBlogs = blogs.slice(-4).reverse();
+      this.latestBlogs = blogs.slice(-3).reverse();
       this.isLoading = false;
       this.isError = false;
     }).catch((err) => {
@@ -33,6 +33,7 @@ export class FooterComponent implements OnInit {
       behavior:'smooth',
       top:0
     });
+    localStorage.setItem("blog", JSON.stringify(blog));
     const selectedBlog = blog.urlTitle.toLowerCase().split(' ').join('-');
     this.blogService.getselectedBlog.next(blog);
     this.router.navigate(['/blogs/', selectedBlog]);

@@ -13,13 +13,13 @@ app.use(express.json());
 // Routes
 const blogRoutes = require('./api/blogRoutes');
 
-app.use('/blogs', blogRoutes);
+app.use('/getBlogs', blogRoutes);
 
-// app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, 'www')));
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'www/index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'www/index.html'));
+});
 
 
 //  mongodb+srv://newUser:<password>@cluster0.qcyjq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority

@@ -40,12 +40,13 @@ export class BlogsDescriptionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.isLoading = true;
+    
     this.blogService.getBlogs().then((blogs: any) => {
       blogs.map((a: any) => {
         if (this.router.url.toLowerCase() == "/blogs/" + a.urlTitle.toLowerCase().split(' ').join('-')) {
           this.router.url.toLowerCase();
           this.blog = a;
-          this.toastService.success(`${a.urlTitle}`);
+          localStorage.setItem("blog", JSON.stringify(this.blog));
           // let blogs = this.blogService.blogsArray.slice(-10).reverse();
           // this.moreBlogs = blogs.sort(() => 0.5 - Math.random());
           this.latestBlogs = blogs.slice(-8).reverse();
@@ -92,12 +93,13 @@ export class BlogsDescriptionComponent implements OnInit, OnDestroy {
       top: 0
     });
     this.blog = blog;
-
+    localStorage.setItem("blog", JSON.stringify(blog));
     const selectedBlog = blog.urlTitle.toLowerCase().split(' ').join('-');
     this.router.navigate(['/blogs/', selectedBlog]);
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+    localStorage.clear();
   }
 }

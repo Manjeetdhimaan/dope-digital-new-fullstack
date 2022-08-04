@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     //updating app title and meta tags.
     const appTitle = this.titleService.getTitle();
+    
     this.router
       .events.pipe(
         filter(event => event instanceof NavigationEnd),
@@ -56,9 +57,16 @@ export class AppComponent implements OnInit {
           //logged in user
           if (blogChild) {
             if (child?.snapshot.data['title']) {
-              child.snapshot.data['title'] = this.capitalizeFirstLetter(this.router.url.slice(7).split('-').join(' ')) + ' - ' + 'Dope Digital';
+              const userJson = localStorage.getItem('blog');
+              let blog;
+              if(userJson !== null){
+                 blog = userJson !== null ? JSON.parse(userJson) : {};
+              }
+              // child.snapshot.data['title'] = this.capitalizeFirstLetter(this.router.url.slice(7).split('-').join(' ')) + ' - ' + 'Dope Digital';
+              child.snapshot.data['title'] = blog.metaTitle + ' - ' + 'Dope Digital';
               this.metaService.updateTag({ property: 'og:url', content: `https://www.dopedigital.in/${this.router.url.slice(1)}` });
-              this.metaService.updateTag({ name: 'description', content: this.capitalizeFirstLetter(this.router.url.slice(7).split('-').join(' ')) });
+              this.metaService.updateTag({ name: 'description', content: blog.metaDesc });
+              // this.metaService.updateTag({ name: 'description', content: this.capitalizeFirstLetter(this.router.url.slice(7).split('-').join(' ')) });
               return child.snapshot.data['title'];
             }
             // if (this.router.url.toLowerCase() === "/blogs") {
@@ -71,6 +79,8 @@ export class AppComponent implements OnInit {
           if (this.router.url.toLowerCase() === "/blogs") {
             if (child?.snapshot.data['title']) {
               child.snapshot.data['title'] = 'BLOGS - Dope Digital';
+              this.metaService.updateTag({ property: 'og:url', content: `https://www.dopedigital.in/blogs` });
+              this.metaService.updateTag({ name: 'description', content: `Blogs from Dope Digital` });
               return child.snapshot.data['title'];
             }
           }

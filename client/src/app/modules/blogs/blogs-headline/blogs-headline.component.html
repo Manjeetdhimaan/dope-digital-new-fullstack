@@ -2,7 +2,7 @@
 <div class="center">
   <app-loading *ngIf="isLoading"></app-loading>
 </div>
-<div *ngIf="!isLoading && !isError" id="blog" class="our-blog section bottom-margin" [ngStyle]="{'margin-top': marginTop }">
+<div *ngIf="!isLoading && !isError" id="blog" class="our-blog section " [ngStyle]="{'margin-top': marginTop }">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 wow" animation="fadeInLeft" delay="100" duration="800" offset="1500" triggerOnce="true">
@@ -16,25 +16,25 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row bottom-margin" >
       <div class="col-lg-6 wow" animation="fadeInLeft" delay="100" duration="800" offset="1500" triggerOnce="true">
         <div class="left-image">
-          <a (click)="onNavigate(latestBlogs?.[0])">
-            <img style="max-height: 60vh;" src="{{ latestBlogs?.[0].imgSrc }}" alt="Blogs">
+          <a (click)="onNavigate(latestBlogs[0])">
+            <img style="max-height: 60vh;" src="{{ latestBlogs[0].imgSrc }}" alt="Blogs">
           </a>
           <div class="info">
             <div class="inner-content">
               <ul>
-                <li><i class="fa fa-calendar"></i> {{ latestBlogs?.[0].dateOfCreatingBlog }}</li>
+                <li><i class="fa fa-calendar"></i> {{ latestBlogs[0].dateOfCreatingBlog }}</li>
                 <li><i class="fa fa-users"></i> Dope Digital</li>
                 <li><i class="fa fa-folder"></i> Branding</li>
               </ul>
               <a>
-                <h4>{{ latestBlogs?.[0].title }}</h4>
+                <h4>{{ latestBlogs[0].title }}</h4>
               </a>
-              <p>{{ latestBlogs?.[0].categoryId }}</p>
+              <p>{{ latestBlogs[0].categoryId }}</p>
               <div class="main-blue-button">
-                <a (click)="onNavigate(latestBlogs?.[0])">Read More</a>
+                <a (click)="onNavigate(latestBlogs[0])">Read More</a>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
 
       <div class="col-lg-6 wow" animation="fadeInRight" delay="100" duration="800" offset="1500" triggerOnce="true">
         <div class="right-list">
-          <ul *ngFor="let blog of latestBlogs?.slice(1)">
+          <ul *ngFor="let blog of latestBlogs?.slice(1,4)">
             <hr>
             <li (click)="onNavigate(blog)">
               <div class="left-content align-self-center">
@@ -62,6 +62,47 @@
         </div>
       </div>
     </div>
+   
+    <!-- <div style="margin-top:20rem" class="col-md-4 col-sm-112 col-xs-12 clearfix" animation="fadeInRight" delay="100" duration="800" offset="1500" triggerOnce="true">
+      <div class="right-list">
+        <ul *ngFor="let blog of latestBlogs?.slice(1,3)">
+          <hr>
+          <li (click)="onNavigate(blog)">
+            <div class="left-content align-self-center">
+              <span><i class="fa fa-calendar"></i>{{ blog.dateOfCreatingBlog }}</span>
+              <a>
+                <h4 [innerHtml]="blog.title"></h4>
+              </a>
+            </div>
+            <div class="right-image">
+              <a><img [src]="blog.imgSrc" alt="blog"></a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div> -->
+   <div *ngIf="showMoreBlogs && latestBlogs.length>4">
+    
+    <article class="col-md-6 col-sm-12 col-xs-12 clearfix" *ngFor="let blog of latestBlogs.slice(4)">
+      <div class="right-list">
+        <ul >
+          <li (click)="onNavigate(blog)">
+            <div class="left-content align-self-center">
+              <span><i class="fa fa-calendar"></i>{{ blog.dateOfCreatingBlog }}</span>
+              <a>
+                <h4 [innerHtml]="blog.title"></h4>
+              </a>
+            </div>
+            <div class="right-image">
+              <a><img [src]="blog.imgSrc" alt="blog"></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <hr>
+  </article>
+   </div>
   </div>
 </div>
 <div *ngIf="!isLoading && isError" id="blog" class="our-blog section bottom-margin" [ngStyle]="{'margin-top': marginTop }">

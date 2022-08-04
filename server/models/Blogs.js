@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const BlogSchema = new mongoose.Schema({
+    id: {
+        type: String,
+        trim: true
+    },
     category: [],
     header: {
         type: String,
@@ -15,6 +19,14 @@ const BlogSchema = new mongoose.Schema({
         trim: true
     },
     urlTitle: {
+        type: String,
+        trim: true
+    },
+    metaTitle: {
+        type: String,
+        trim: true
+    },
+    metaDesc: {
         type: String,
         trim: true
     },
@@ -102,6 +114,48 @@ const BlogSchema = new mongoose.Schema({
         },
     }],
     subTitleFactPoints: [{
+        type: Object,
+        title: {
+            type: String,
+            trim: true
+        },
+        point: {
+            type: String,
+            trim: true
+        },
+        imgSrc: {
+            type: String,
+            trim: true
+        },
+        floatImage: {
+            type: String,
+            trim: true
+        },
+        imgCaption: {
+            type: String,
+            trim: true
+        },
+        videoSrc: {
+            type: String,
+            trim: true
+        },
+        instaLink: {
+            type: String,
+            trim: true
+        },
+    }],
+    otherSubTitleFactHeader: {
+        type: String,
+        trim: true
+    },
+    otherSubTitleFactTitles: [{
+        type: Object,
+        point: {
+            type: String,
+            trim: true
+        },
+    }],
+    otherSubTitleFactPoints: [{
         type: Object,
         title: {
             type: String,
