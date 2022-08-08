@@ -60,7 +60,7 @@ export class HeaderComponent implements OnInit {
   // navigate to particular component
   onNavigate(route:string) {
     window.scrollTo({
-      behavior:'smooth',
+      behavior:'auto',
       top:0
     });
     this.router.navigate([route]);

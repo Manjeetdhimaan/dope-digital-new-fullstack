@@ -10,6 +10,7 @@ export class AboutUsComponent implements OnInit {
 
   isHeaderFooter= false;
   @Input() isContactComponent:boolean = true;
+  @Input() showAbout:boolean = true;
 
   ngOnInit(): void {
   }
