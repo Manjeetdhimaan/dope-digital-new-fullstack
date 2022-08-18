@@ -105,6 +105,7 @@
    </div>
   </div>
 </div>
+<div class="emptySpace" *ngIf="isLoading"></div>
 <div *ngIf="!isLoading && isError" id="blog" class="our-blog section bottom-margin" [ngStyle]="{'margin-top': marginTop }">
   <div class="container">
     <div class="row">

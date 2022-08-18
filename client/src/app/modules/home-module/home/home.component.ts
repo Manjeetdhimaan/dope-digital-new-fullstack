@@ -13,14 +13,14 @@ export class HomeComponent implements OnInit {
   isContactComponent= false;
   showMoreBlogs= false;
   serviceArray:any[];
-  marginTop= '-40px'
+  marginTop= '-40px';
 
   ngOnInit(): void {
-    this.serviceArray= this.dataService.serviceArray.slice(0,4)
+    this.serviceArray= this.dataService.serviceArray.slice(0,4);
   }
 
   customOptionshome: OwlOptions = {
-    loop: false,
+    loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
@@ -48,6 +48,6 @@ export class HomeComponent implements OnInit {
         "items": 1,
       }
     },
-  }
+  };
 
 }

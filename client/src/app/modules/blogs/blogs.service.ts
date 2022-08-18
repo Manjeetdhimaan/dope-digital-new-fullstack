@@ -19,6 +19,10 @@ export class BlogsService {
       })
   }
 
+  onGetBlogs() {
+    return this.blogsArray.slice();
+  }
+
   getBlogs() {
      return this.http.get(`http://localhost:4949/getBlogs`).toPromise();
   // return this.blogsArray1;
@@ -27,6 +31,5 @@ export class BlogsService {
     // return this.blogsArray.slice();
 
   getselectedBlog = new Subject<any>();
-
 
 }

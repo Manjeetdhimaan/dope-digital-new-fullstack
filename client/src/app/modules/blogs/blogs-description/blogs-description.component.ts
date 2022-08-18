@@ -25,14 +25,28 @@ export class BlogsDescriptionComponent implements OnInit, OnDestroy {
         if (event.navigationTrigger === 'popstate') {
           this.isLoading = true;
           activatedRoute.params.subscribe((param: Params) => {
-            this.blogService.blogsArray.map((a: any) => {
-              if (param['blog'].toLowerCase() == a.urlTitle.toLowerCase().split(' ').join('-')) {
-                this.blog = a;
-                this.latestBlogs = this.blogService.blogsArray.slice(-8).reverse();
-                this.isLoading = false;
-                this.isError= false;
-              }
-            })
+            if(this.blogService.blogsArray) {
+              this.blogService.onGetBlogs().map((a: any) => {
+                if (param['blog'].toLowerCase() == a.urlTitle.toLowerCase().split(' ').join('-')) {
+                  this.blog = a;
+                  this.latestBlogs = this.blogService.blogsArray.slice(-8).reverse();
+                  this.isLoading = false;
+                  this.isError= false;
+                }
+              })
+            }
+            else {
+              this.blogService.getBlogs().then((blogs: any) => {
+                blogs.map((a: any) => {
+                  if (param['blog'].toLowerCase() == a.urlTitle.toLowerCase().split(' ').join('-')) {
+                    this.blog = a;
+                    this.latestBlogs = this.blogService.blogsArray.slice(-8).reverse();
+                    this.isLoading = false;
+                    this.isError= false;
+                  }
+                })
+              })
+            }
           })
         }
       });
@@ -40,9 +54,9 @@ export class BlogsDescriptionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.isLoading = true;
-    
-    this.blogService.getBlogs().then((blogs: any) => {
-      blogs.map((a: any) => {
+    if(this.blogService.blogsArray) {
+      const blogs = this.blogService.onGetBlogs();
+      this.blogService.onGetBlogs().map((a: any) => {
         if (this.router.url.toLowerCase() == "/blogs/" + a.urlTitle.toLowerCase().split(' ').join('-')) {
           this.router.url.toLowerCase();
           this.blog = a;
@@ -60,11 +74,36 @@ export class BlogsDescriptionComponent implements OnInit, OnDestroy {
         this.isLoading = false;
         
       }
-    }).catch((err) => {
-      this.toastService.error(err.message);
-      this.isLoading = false;
-      this.isError= true;
-    })
+        this.isLoading = false;
+        this.isError = false; 
+    }
+    else {
+      this.blogService.getBlogs().then((blogs: any) => {
+        blogs.map((a: any) => {
+          if (this.router.url.toLowerCase() == "/blogs/" + a.urlTitle.toLowerCase().split(' ').join('-')) {
+            this.router.url.toLowerCase();
+            this.blog = a;
+            localStorage.setItem("blog", JSON.stringify(this.blog));
+            // let blogs = this.blogService.blogsArray.slice(-10).reverse();
+            // this.moreBlogs = blogs.sort(() => 0.5 - Math.random());
+            this.latestBlogs = blogs.slice(-8).reverse();
+            this.isLoading = false;
+            this.isError= false;
+            // this.latestBlogs = this.blogService.blogsArray.slice(-8).reverse();
+          }
+        })
+        if (this.router.url.toLowerCase() !== "/blogs/" + this.blog?.urlTitle.toLowerCase().split(' ').join('-')) {
+          this.router.navigate(['/404notfound']);
+          this.isLoading = false;
+          
+        }
+      }).catch((err) => {
+        this.toastService.error(err.message);
+        this.isLoading = false;
+        this.isError= true;
+      })
+    }
+    
     // this.blogService.getBlogs().map((a: any) => {
     //       if (this.router.url.toLowerCase() == "/blogs/" + a.urlTitle.toLowerCase().split(' ').join('-')) {
     //         this.router.url.toLowerCase();

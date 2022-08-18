@@ -40,10 +40,7 @@ font & reset css
 reset
 --------------------------------------------- 
 */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+
 
 html,
 body,
@@ -988,12 +985,28 @@ Banner Style
   line-height: 72px;
 }
 
+.main-banner .left-content h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: #2a2a2a;
+  line-height: 72px;
+}
+
 .main-banner .left-content h2 em {
   color: #fed136;
   font-style: normal;
 }
 
+.main-banner .left-content h1 em {
+  color: #fed136;
+  font-style: normal;
+}
+
 .main-banner .left-content h2 span {
+  color: #ffa500;
+}
+
+.main-banner .left-content h1 span {
   color: #ffa500;
 }
 
@@ -1444,8 +1457,8 @@ contact
 
 .phone-info h4 span a {
   color: #fff;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 19px;
+  font-weight: 600;
 }
 
 form#contact .contact-dec {

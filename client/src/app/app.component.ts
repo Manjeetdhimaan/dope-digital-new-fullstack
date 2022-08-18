@@ -5,6 +5,7 @@ import { filter, map } from 'rxjs';
 import { DataService } from './modules/services-module/services/data.service';
 import { HttpClient } from '@angular/common/http';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { BlogsService } from './modules/blogs/blogs.service';
 
 @Component({
   selector: 'app-root',
@@ -31,12 +32,13 @@ export class AppComponent implements OnInit {
   title = 'dope-digital';
   blogs: any;
   animationState = 'in';
-  constructor(private titleService: Title, private router: Router, private activatedRoute: ActivatedRoute, private dataService: DataService, private metaService: Meta, private http: HttpClient) {
+  constructor(private titleService: Title, private router: Router, private activatedRoute: ActivatedRoute, private dataService: DataService, private metaService: Meta, private http: HttpClient, private blogService: BlogsService) {
 
   }
 
   isSingleService: boolean = false;
   isBlog: boolean = false;
+
   ngOnInit() {
     //updating app title and meta tags.
     const appTitle = this.titleService.getTitle();
@@ -60,7 +62,7 @@ export class AppComponent implements OnInit {
               const userJson = localStorage.getItem('blog');
               let blog;
               if(userJson !== null){
-                 blog = userJson !== null ? JSON.parse(userJson) : {};
+                 blog = JSON.parse(userJson);
               }
               // child.snapshot.data['title'] = this.capitalizeFirstLetter(this.router.url.slice(7).split('-').join(' ')) + ' - ' + 'Dope Digital';
               child.snapshot.data['title'] = blog.metaTitle + ' - ' + 'Dope Digital';

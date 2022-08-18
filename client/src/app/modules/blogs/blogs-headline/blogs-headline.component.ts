@@ -21,7 +21,13 @@ export class BlogsHeadlineComponent implements OnInit {
   ngOnInit(): void {
 
     this.isLoading=true;
-       this.blogService.getBlogs().then((blogs:any) => {
+    if(this.blogService.blogsArray) {
+      this.latestBlogs = this.blogService.onGetBlogs().slice(-4).reverse();
+        this.isLoading = false;
+        this.isError = false; 
+    }
+    else {
+      this.blogService.getBlogs().then((blogs:any) => {
         this.latestBlogs = blogs.slice(-4).reverse();
         this.isLoading = false;
         this.isError = false;
@@ -31,6 +37,8 @@ export class BlogsHeadlineComponent implements OnInit {
         this.isError = true;
         this.toastService.error(err.message);
       })
+    }
+       
 
     // this.latestBlogs = this.blogService.getBlogs().slice(-4).reverse();
     // this.latestBlogs= this.blogService.blogsArray1.slice(-4).reverse();

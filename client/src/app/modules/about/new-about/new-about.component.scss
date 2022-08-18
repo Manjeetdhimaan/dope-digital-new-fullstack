@@ -5,8 +5,10 @@
 
 .title h1,
 .title h2 {
-  font-family: "league_spartanbold";
-  font-size: 1.5em;
+  // font-family: "league_spartanbold";
+  font-family: 'Poppins', sans-serif;
+  // font-size: 1.5em;
+  font-size: 24px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.3em;
@@ -19,7 +21,8 @@
 
   .title h1,
   .title h2 {
-    font-size: 2.1em;
+    // font-size: 2.1em;
+    font-size: 24px;
     letter-spacing: 5px
   }
 }
@@ -35,8 +38,10 @@
 }
 
 .title h3 {
-  font-family: "league_spartanbold";
-  font-size: 1.2em;
+  // font-family: "league_spartanbold";
+  font-family: 'Poppins', sans-serif;
+  // font-size: 1.2em;
+  font-size: 24px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.3em;
@@ -47,7 +52,8 @@
 
 @media (min-width: 1200px) {
   .title h3 {
-    font-size: 1.8em;
+    // font-size: 1.8em;
+    font-size: 24px;
     letter-spacing: 2px
   }
 }
@@ -67,8 +73,10 @@
 
 .header-content h1,
 .header-content h2 {
-  font-family: "league_spartanbold";
-  font-size: 1.5em;
+  // font-family: "league_spartanbold";
+  font-family: 'Poppins', sans-serif;
+  // font-size: 1.5em;
+  font-size: 24px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.3em;
@@ -77,11 +85,16 @@
   text-transform: uppercase
 }
 
+.header-content p {
+  color: #fff;
+}
+
 @media (min-width: 1200px) {
 
   .header-content h1,
   .header-content h2 {
-    font-size: 2.5em;
+    // font-size: 2.5em;
+    font-size: 26px;
     letter-spacing: 5px
   }
 }
@@ -93,28 +106,30 @@
 
 .header-content p {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.3em;
+  // font-size: 1.3em;
+  font-size: 16px;
   font-style: normal;
   line-height: 1.3em
 }
 
 @media (min-width: 1200px) {
   .header-content p {
-    font-size: 1.5em;
+    font-size: 16px;
     line-height: 1.5em
   }
 }
 
 p {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.3em;
+  // font-size: 1.3em;
+  font-size: 16px;
   font-style: normal;
   line-height: 1.3em
 }
 
 @media (min-width: 1200px) {
   p {
-    font-size: 1.5em;
+    font-size: 16px;
     line-height: 1.5em
   }
 }
@@ -220,8 +235,10 @@ section .container-fluid {
 
 .our-values .value h4 {
   text-transform: uppercase;
-  font-family: "open_sansbold";
-  font-size: 1.2em;
+  // font-family: "open_sansbold";
+  font-family: 'Poppins', sans-serif;
+  // font-size: 1.2em;
+  font-size: 22px;
   font-weight: 800;
   font-style: normal;
   line-height: 1.3em;
@@ -249,9 +266,11 @@ section .container-fluid {
 }
 
 .more-services .service_content h4 {
-  font-family: "open_sansbold";
-  font-size: 1.1em;
-  font-weight: 800;
+  // font-family: "open_sansbold";
+  font-family: 'Poppins', sans-serif;
+  // font-size: 1.1em;
+  font-size: 22px;
+  font-weight: 600;
   font-style: normal;
   line-height: 1.3em;
   color: #ffa500
@@ -326,7 +345,8 @@ section.section-background__img {
 }
 
 section.section-background__color {
-  background: #ffa500;
+  // background: #ffa500;
+  background: #333;
   color: #fff;
   text-align: center
 }
@@ -369,8 +389,10 @@ section#page-content .title h3::after {
 }
 
 section#page-content .content h2 {
-  font-family: "open_sansbold";
-  font-size: 1.6em;
+  // font-family: "open_sansbold";
+  font-family: 'Poppins', sans-serif;
+  // font-size: 1.6em;
+  font-size: 28px;
   font-weight: bold;
   font-style: normal;
   line-height: 1.3em
@@ -387,7 +409,8 @@ section#page-content .content ol {
   section#page-content .content p,
   section#page-content .content ul,
   section#page-content .content ol {
-    font-size: 1.3em
+    // font-size: 1.3em;
+    font-size: 16px;
   }
 }
 

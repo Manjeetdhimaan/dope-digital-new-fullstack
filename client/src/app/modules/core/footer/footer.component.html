@@ -47,7 +47,7 @@
                     <h4>From The Blog</h4>
                     <app-loading *ngIf="isLoading"></app-loading>
                     <h6 *ngIf="!isLoading && isError">Error while loading blogs</h6>
-                    <ul  class="recent-blog" *ngFor="let blog of latestBlogs">
+                    <ul class="recent-blog" *ngFor="let blog of latestBlogs">
                         <li><a (click)="onNavigateToBlog(blog)">
                                 <img loading="lazy" [src]="blog.imgSrc" [alt]="blog.urlTitle" style="max-width:35%">
                                 <div class="content">
@@ -60,11 +60,13 @@
             </div>
         </div>
     </section>
-    <section id="copyright">
+    <section id="copyright"
+        style="background-image: url('assets/images/footer-background.gif')!important;">
         <div class="row align-items-center justify-content-between">
             <div class="col-12 col-lg-auto text-center" style="margin-bottom:0">
                 <div class="content mt-6 mt-sm-0">
-                    <p>© 2022 Design And Developed By <a routerLink="/" (click)="onNavigate('/')">Dope Digital</a> | All rights reserved | </p>
+                    <p>© 2022 Design And Developed By <a routerLink="/" (click)="onNavigate('/')">Dope Digital</a> | All
+                        rights reserved | </p>
                 </div>
             </div>
             <div class="col-12 col-lg-auto text-center" style="margin-right:7rem">

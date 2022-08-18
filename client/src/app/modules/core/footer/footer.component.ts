@@ -14,17 +14,25 @@ export class FooterComponent implements OnInit {
   latestBlogs:any[];
   isLoading: boolean = false;
   isError: boolean = false;
+  
   ngOnInit(): void {
     this.isLoading = true;
-    this.blogService.getBlogs().then((blogs:any) => {
-      this.latestBlogs = blogs.slice(-3).reverse();
-      this.isLoading = false;
-      this.isError = false;
-    }).catch((err) => {
-      console.log(err);
-      this.isLoading = false;
-      this.isError = true;
-    })
+    if(this.blogService.blogsArray) {
+      this.latestBlogs = this.blogService.onGetBlogs().slice(-3).reverse();
+        this.isLoading = false;
+        this.isError = false; 
+    }
+    else {
+      this.blogService.getBlogs().then((blogs:any) => {
+        this.latestBlogs = blogs.slice(-3).reverse();
+        this.isLoading = false;
+        this.isError = false;
+      }).catch((err) => {
+        console.log(err);
+        this.isLoading = false;
+        this.isError = true;
+      })
+    }
     // this.latestBlogs= this.blogService.blogsArray.slice(-3).reverse();
   }
 

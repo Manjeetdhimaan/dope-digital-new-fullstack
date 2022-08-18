@@ -22,6 +22,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     ]),
   ]
 })
+
 export class HeaderComponent implements OnInit {
   isSticky:boolean=false;
   isLoading:boolean=false;
@@ -85,5 +86,4 @@ export class HeaderComponent implements OnInit {
     this.isMobileMenu = !this.isMobileMenu;
     this.animationState= this.animationState=='in'?'out':'in'
   }
-
 }

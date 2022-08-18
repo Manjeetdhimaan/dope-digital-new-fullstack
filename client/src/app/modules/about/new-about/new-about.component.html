@@ -1,11 +1,13 @@
 <!-- new about us -->
 <div id="content" class="site-content">
     <div class="header-content divider-bottom-left"
-        style="background-image:url('https://www.seoworks.co.uk/wp-content/uploads/2018/07/About-Header.png')">
+        style="background-image:url('assets/images/Shooting-Star-Background-in-Pure-CSS.jpg')">
         <div class="container">
             <div class="col-12">
-                <h2> The UK's leading Search Specialists</h2>
-                <p>We provide professional PPC, Web and SEO services to increase online visibility and qualified leads
+                <h2 animation="fadeInRight" delay="0" duration="500" offset="80"
+                triggerOnce="false"> The UK's leading Search Specialists</h2>
+                <p style="font-size:1.2em" animation="fadeInLeft" delay="0" duration="500" offset="80"
+                triggerOnce="false">We provide professional PPC, Web and SEO services to increase online visibility and qualified leads
                     to your business.</p>
             </div>
         </div>
@@ -17,7 +19,7 @@
                     <div class="col-12">
                         <div class="title" animation="fadeInUp" delay="0" duration="500" offset="100"
                         triggerOnce="false">
-                            <h1>About Us</h1>
+                            <h2>About Us</h2>
                         </div>
                     </div>
                     <div class="col-md-10 offset-md-1" animation="fadeInUp" delay="0" duration="500" offset="100"
@@ -63,7 +65,9 @@
             </div>
         </div>
     </section>
-    <section animation="fadeInLeft" delay="0" duration="500" offset="50"
+  <!-- google partners section overflowing -->
+
+    <!-- <section animation="fadeInDown" delay="0" duration="500" offset="50"
     triggerOnce="false" class="section google-partners section-background divider-top-left divider-bottom-right"
         style="background-image: url('https://www.seoworks.co.uk/wp-content/uploads/2018/07/About-Google-Partner-Small.png')">
 
@@ -76,7 +80,7 @@
                                 height="158"
                                 srcset="https://www.seoworks.co.uk/wp-content/uploads/2018/07/seoworks-google-partners.png 865w, https://www.seoworks.co.uk/wp-content/uploads/2018/07/seoworks-google-partners-300x55.png 300w, https://www.seoworks.co.uk/wp-content/uploads/2018/07/seoworks-google-partners-768x140.png 768w, https://www.seoworks.co.uk/wp-content/uploads/2018/07/seoworks-google-partners-200x37.png 200w, https://www.seoworks.co.uk/wp-content/uploads/2018/07/seoworks-google-partners-350x64.png 350w"
                                 sizes="(max-width: 865px) 100vw, 865px"><br>
-                            <span style="color: #303030;">The SEO Works is a <a href="/google-partner-agency/">certified
+                            <span style="color: #303030;">The SEO Works is a <a>certified
                                     Google Partner</a> for Google Adwords (PPC), search, display, shopping, mobile and
                                 video. We provide comprehensive professional search advertising and SEO services to
                                 clients across the UK and abroad.</span>
@@ -91,22 +95,30 @@
             </div>
         </div>
 
-    </section>
+    </section> -->
+
+
     <section class="section our-values">
         <div class="sections">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="title">
+                        <div class="title" animation="fadeInLeft" delay="0" duration="500" offset="80"
+                        triggerOnce="false">
                             <h2> Our Values</h2>
                         </div>
                     </div>
                     <div class="col-md-10 offset-md-1">
-                        <div class="content">
+                        <div class="content" animation="fadeInRight" delay="0" duration="500" offset="80"
+                        triggerOnce="false">
                             <p>Our values reflect what you should expect from us when working together:</p>
                         </div>
                     </div>
-                    <div class="values">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="values" animation="fadeInUp" delay="0" duration="500" offset="70"
+                    triggerOnce="false">
                         <div class="row offset-xl-2">
                             <div class="col-sm-6 col-md-4 col-xl-2">
                                 <div class="value">
@@ -169,12 +181,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="title">
+                    <div class="title" animation="fadeInLeft" delay="0" duration="500" offset="80"
+                    triggerOnce="false">
                         <h2> Services from an Experienced company</h2>
                     </div>
                 </div>
                 <div class="col-md-10 offset-md-1">
-                    <div class="content">
+                    <div class="content" animation="fadeInRight" delay="0" duration="500" offset="80"
+                    triggerOnce="false">
                         <p>We’ve been around for over 10 years, which is a long time in the world of PPC and SEO
                             services.</p>
                         <p>Our diverse client portfolio includes companies operating in <a
@@ -201,7 +215,8 @@
         </div>
 
     </section>
-    <section class="section">
+    <section class="section" animation="fadeInUp" delay="0" duration="500" offset="70"
+    triggerOnce="false">
         <div class="sections">
             <div class="container">
                 <div class="row">
@@ -214,7 +229,7 @@
                         <div class="content">
                             <p>Quality search engine optimisation takes time. We use only the safest, most effective SEO
                                 services to both improve and provide long-term rankings results. Throughout the <a
-                                    href="/how-does-seo-work/">SEO process</a>, we provide our clients with detailed
+                                (click)="onNavigate()" routerLink="/seo">SEO process</a>, we provide our clients with detailed
                                 monthly reports about our work and the ongoing results.</p>
                             <p>
                         </div>

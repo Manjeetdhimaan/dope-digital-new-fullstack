@@ -3,6 +3,13 @@
   color: #111
 }
 
+.p-100 {
+
+  background-image: url("../../../../assets/images/footer-background.gif")!important;
+  // background-repeat: no-repeat!important;
+  // background-size: cover!important;
+}
+
 #footer-menus h4 {
   font-weight: 400;
   padding-bottom: .5rem;
@@ -165,4 +172,28 @@ footer p {
 
 .col-12 {
   margin-bottom: 2rem;
+}
+
+h4 {
+  color: #fff!important;
+}
+
+li a {
+  color: #fff!important;
+}
+
+p {
+  color: #fff!important;
+}
+
+span {
+  color: #fff!important;
+}
+
+li {
+  color: #fff!important;
+}
+
+h6 {
+  color: #fff;
 }

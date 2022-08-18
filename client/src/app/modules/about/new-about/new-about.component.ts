@@ -12,4 +12,10 @@ export class NewAboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onNavigate() {
+    window.scrollTo({
+      behavior:'smooth',
+      top:0
+    });
+  }
 }
