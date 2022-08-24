@@ -60,9 +60,9 @@
 
 .title h3::after {
   content: '';
-  width: 40px;
+  width: 70px;
   height: 8px;
-  background: #656363;
+  background: #ffa500;
   display: block;
   margin: 20px auto
 }
@@ -269,11 +269,15 @@ section .container-fluid {
   // font-family: "open_sansbold";
   font-family: 'Poppins', sans-serif;
   // font-size: 1.1em;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
   font-style: normal;
   line-height: 1.3em;
-  color: #ffa500
+  color: #ffa500;
+}
+
+.more-services .service_content {
+  margin-bottom: 1.5rem;
 }
 
 .more-services .service_content h4 a {
