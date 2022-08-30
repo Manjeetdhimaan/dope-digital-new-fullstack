@@ -13,7 +13,7 @@ app.use(express.json());
 // Routes
 const blogRoutes = require('./api/blogRoutes');
 
-app.use('/getBlogs', blogRoutes);
+app.use('/api/Blogs', blogRoutes);
 
 app.use(express.static(path.join(__dirname, 'www')));
 

@@ -9,7 +9,7 @@ export class BlogsService {
   blogsArray:any;
   getBlogsArray = new Subject<any>();
   constructor(private http: HttpClient) { 
-      this.http.get(`http://localhost:4949/getBlogs`).subscribe((res:any) => {
+      this.http.get(`http://localhost:4949/api/Blogs`).subscribe((res:any) => {
       //logged in user
       this.blogsArray = res;
       // getting attendance of logged in user
@@ -24,7 +24,7 @@ export class BlogsService {
   }
 
   getBlogs() {
-     return this.http.get(`http://localhost:4949/getBlogs`).toPromise();
+     return this.http.get(`http://localhost:4949/api/Blogs`).toPromise();
   // return this.blogsArray1;
 
   }

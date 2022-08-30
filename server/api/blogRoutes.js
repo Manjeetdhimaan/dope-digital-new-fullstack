@@ -11,8 +11,7 @@ router.get('', (req, res) => {
     })
 })
 
-router.post('/register', async(req, res) => {
-  
+router.post('/addBlog', async(req, res) => {
         const newBlog = new Blog({
             id:req.body.id,
             category: req.body.category,
@@ -49,6 +48,5 @@ router.post('/register', async(req, res) => {
             })
         })
 })
-
 
 module.exports = router;
