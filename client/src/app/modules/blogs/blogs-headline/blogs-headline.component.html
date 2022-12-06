@@ -1,6 +1,6 @@
 <!-- <app-header *ngIf="isHeaderFooter"></app-header> -->
-<div class="center">
-  <app-loading *ngIf="isLoading"></app-loading>
+<div class="center" *ngIf="isLoading">
+  <app-loading ></app-loading>
 </div>
 <div *ngIf="!isLoading && !isError" id="blog" class="our-blog section " [ngStyle]="{'margin-top': marginTop }">
   <div class="container">
